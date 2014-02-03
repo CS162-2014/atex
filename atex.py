@@ -36,6 +36,16 @@ while line!="":
         outfile.write("\\author{"+author+"}\n")
     elif line[:8]==escape+"control":
         control=line.split()[1]
+    elif line[:10]==escape+"openParen":
+        parenOpen=line.split()[1]
+    elif line[:11]==escape+"closeParen":
+        parenClosed=line.split()[1]
+    elif line[:9]==escape+"mathOpen":
+        mathOpen=line.split()[1]
+    elif line[:10]==escape+"mathClose":
+        mathClose=line.split()[1]
+    elif line[:4]==escape+"cmd":
+        outfile.write("\\newcommand{\\"+line.split()[1]+"} {\\"+line.split()[2]+"}") # syntax: #cmd alias oldcommand  --ommit control characters! just enter the raw alphanumeric symbols
     elif line[:7]==escape+"import":
         for word in line.split()[1:]:
             usepackage.append(word)
