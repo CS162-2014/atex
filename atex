@@ -4,8 +4,7 @@
 python atex.py $1
 file=${1:0:(-5)}
 newFile=$file".tex"
-latex $newFile
-rm $file".dvi"
+pdflatex $newFile
 rm $file".log"
 rm $file".aux"
 exit 0
