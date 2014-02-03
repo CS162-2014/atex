@@ -53,3 +53,5 @@ def remLeadWhite(word):
             break;
     return word[count:]
 
+def fileExt(f):
+    return f[:-4]+".tex"
