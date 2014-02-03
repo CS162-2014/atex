@@ -11,7 +11,7 @@
 #proof
     I am good thanks 
     {
-        x/in Y | /{x /notin Z, 2^{-1}/}
+        x/in Y
         y/in X
         x/subset Y
         y/subset X //
