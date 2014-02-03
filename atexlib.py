@@ -43,7 +43,11 @@ def parseTex(infile, outfile):
         oldPos=infile.tell()
         thmline=infile.readline()
     infile.seek(oldPos)
-
+def parseCmd(outfile, fields):
+    if(len(fields)==3):
+        outfile.write("\\newcommand{\\"+fields[1]+"}{\\"+fields[2]+"}\n")
+    else:
+        outfile.write("\\newcommand{\\"+fields[1]+"}["+fields[2]+"]{\\"+fields[3]+"}")
 def remLeadWhite(word):
     count=0
     for i in range(0,len(word)):

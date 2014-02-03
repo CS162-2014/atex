@@ -20,7 +20,7 @@ mathClose="}" #same as above but closes
 author="student"
 title="Math Homework"
 escape="#" #control/escape character of .atex files
-control="/" #control character for latex ("\") of latex
+control="\\" #control character for latex ("\") of latex
 parenOpen="{" #edit this to change the parentheses character of latex ("{") of latex
 parenClosed="}" #same as above
 line=infile.readline()
@@ -45,7 +45,7 @@ while line!="":
     elif line[:10]==escape+"mathClose":
         mathClose=line.split()[1]
     elif line[:4]==escape+"cmd":
-        outfile.write("\\newcommand{\\"+line.split()[1]+"} {\\"+line.split()[2]+"}") # syntax: #cmd alias oldcommand  --ommit control characters! just enter the raw alphanumeric symbols
+        atexlib.parseCmd(outfile,line.split())
     elif line[:7]==escape+"import":
         for word in line.split()[1:]:
             usepackage.append(word)

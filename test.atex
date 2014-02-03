@@ -1,8 +1,11 @@
 //test File for testing tex output
 //these are test comments
-#author Alec
+#author Alec Snyder
 #title homework
-#import amsthm amssymb
+#import amsthm amssymb fullpage
+#openParen (
+#closeParen )
+#cmd fr 2 frac{\underline{#1}}{#2}
 #center
     Homework 3 by Alec Snyder
 #theorem
@@ -11,13 +14,14 @@
 #proof
     I am good thanks 
     {
-        x/in Y
-        y/in X
-        x/subset Y
-        y/subset X //
+        x\in Y
+        y\in X
+        \fr(1)(2)
+        x\subset Y
+        y\subset X \\
         Y=X
     }
-    Thanks for asking //
+    Thanks for asking \\
     How are you
 
 
