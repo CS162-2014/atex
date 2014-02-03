@@ -9,6 +9,7 @@ import atexlib
 infile=sys.argv[1]
 usepackage=[]
 document=False
+thm=True
 outfile=re.split('\.atex$', infile)[0]
 outfile=outfile+".tex"
 infile=open(infile)
@@ -31,7 +32,7 @@ while line!="":
         title=line.split()[1]
         outfile.write("\\title{"+title+"}\n")
     elif line[:7]==escape+"author":
-        author=line.split()[1]
+        author=line[8:-1]
         outfile.write("\\author{"+author+"}\n")
     elif line[:8]==escape+"control":
         control=line.split()[1]
@@ -44,7 +45,9 @@ while line!="":
         if not document:
             outfile.write("\\begin{document}\n")
             document=True
-        outfile.write("\\newtheorem{theorem}{Theorem}[section]\n")
+        if thm:
+            outfile.write("\\newtheorem{theorem}{Theorem}[section]\n")
+            thm=False
         outfile.write("\\begin{theorem} \n")
         atexlib.parseSeq(infile, outfile, mathOpen, mathClose,parenOpen, parenClosed, control)
         outfile.write("\\end{theorem}\n")
