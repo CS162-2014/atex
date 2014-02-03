@@ -1,7 +1,7 @@
 #!/bin/bash
 #Alec Snyder
 #autocompiler for tex files
-python atex.py $1
+./atex.py $1
 file=${1:0:(-5)}
 newFile=$file".tex"
 pdflatex $newFile
