@@ -1,0 +1,25 @@
+//test File for testing tex output
+//these are test comments
+#author Alec
+#title homework
+#import amsthm amssymb
+#center
+    Homework 3 by Alec Snyder
+#theorem
+    how am I !
+    how are you
+#proof
+    I am good thanks 
+    {
+        x/in Y | /{x /notin Z, 2^{-1}/}
+        y/in X
+        x/subset Y
+        y/subset X //
+        Y=X
+    }
+    Thanks for asking //
+    How are you
+
+
+
+
